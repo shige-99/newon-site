@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>画像ギャラリー</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* 修正されたプロパティ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* 画像が折り返すように設定 */
+            height: 100vh;
+        }
+        img {
+            max-width: 50%; /* 画像がビューポートの半分の幅になるように調整 */
+            max-height: 100%;
+            border-radius: 8px;
+            margin: 10px; /* 画像間に余白を設ける */
+        }
+    </style>
+</head>
+<body>
+    <!-- 画像を表示 -->
+    <img src="S__217923587_0.jpg" alt="おしゃれな画像1">
+    <img src="S__217923589_0.jpg" alt="おしゃれな画像2">
+</body>
+</html>
