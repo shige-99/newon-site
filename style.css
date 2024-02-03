@@ -1,0 +1,127 @@
+main img {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+
+nav {
+  display: block; /* Flexboxを有効化 */
+  flex-direction: column; /* 項目を縦方向に並べる */
+  justify-content: center; /* 項目を垂直方向に中央揃え */
+  align-items: center; /* 項目を水平方向に中央揃え */
+  width: 100%; /* 画面全体の幅に変更 */
+  position: fixed;
+  padding: 20px 10%;
+  background-color: rgba(0, 0, 0, 0.123);
+  z-index: 3;
+  opacity: 0;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+}
+
+nav .inner {
+  padding: 25px;
+}
+
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .inner ul li {
+  margin: 0 10px;
+}
+
+nav .inner ul li a {
+  display: block;
+  text-decoration: none;
+  color: #acaaaa;
+  font-size: 1.25rem;
+  padding: 1rem;
+  transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+  background: rgba(131, 131, 131, 0.349);
+  border-radius: 6px;
+}
+
+.toggle-btn {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.toggle-btn span {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #acaaaa;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+.toggle-btn span:nth-child(1) {
+  top: 4px;
+}
+
+.toggle-btn span:nth-child(2) {
+  top: 14px;
+}
+
+.toggle-btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+.open .toggle-btn span {
+  background-color: #acaaaa;
+}
+
+.open .toggle-btn span:nth-child(1) {
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .toggle-btn span:nth-child(3) {
+  transform: translateY(-10px) rotate(315deg);
+}
+
+#mask {
+  display: none;
+  transition: all 0.5s;
+}
+
+.open nav {
+  left: 0;
+  opacity: 1;
+}
+
+.open #mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.5;
+}
+
+.no-scroll {
+  overflow: hidden; /* スクロールを無効にする */
+}
