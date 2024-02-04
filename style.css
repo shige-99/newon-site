@@ -1,20 +1,26 @@
-main img {
-  width: 100vw;
+body {
+  font-family: serif;
+}
+
+.header {
+  width: 100%;
   height: 100vh;
-  margin: auto;
-  display: block;
-  object-fit: cover;
+  background-image: url("./images/top.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 32px;
 }
 
 nav {
-  display: block; /* Flexboxを有効化 */
-  flex-direction: column; /* 項目を縦方向に並べる */
-  justify-content: center; /* 項目を垂直方向に中央揃え */
-  align-items: center; /* 項目を水平方向に中央揃え */
-  width: 100%; /* 画面全体の幅に変更 */
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
   position: fixed;
   padding: 20px 10%;
-  background-color: rgba(0, 0, 0, 0.123);
+  background-color: rgba(214, 214, 214, 0.74);
   z-index: 3;
   opacity: 0;
   box-sizing: border-box;
@@ -41,14 +47,20 @@ nav .inner ul li {
 nav .inner ul li a {
   display: block;
   text-decoration: none;
-  color: #acaaaa;
+  color: #000000;
   font-size: 1.25rem;
   padding: 1rem;
   transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+/* ナビゲーションバーが.openクラスを持っていないときのナビゲーションリンク */
+body:not(.open) nav .inner ul li a {
+  cursor: default;
 }
 
 nav .inner ul li a:hover {
-  background: rgba(131, 131, 131, 0.349);
+  background: rgba(138, 138, 138, 0.575);
   border-radius: 6px;
 }
 
@@ -112,6 +124,10 @@ nav .inner ul li a:hover {
   opacity: 1;
 }
 
+.open nav .inner ul li a {
+  cursor: pointer;
+}
+
 .open #mask {
   display: block;
   width: 100%;
@@ -123,5 +139,21 @@ nav .inner ul li a:hover {
 }
 
 .no-scroll {
-  overflow: hidden; /* スクロールを無効にする */
+  overflow: hidden;
+}
+
+#concept,
+#aboutMe,
+#info,
+#contact {
+  padding: 5rem 0 6rem;
+}
+
+h2,
+p {
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 32px;
 }
